@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SingleCard from '../SingleCard/SingleCard';
 
 
-const Home = () => {
+const Home = ({handleWatchTime}) => {
 
     const [movies, setMovies] = useState([]);
 
@@ -18,7 +18,7 @@ const Home = () => {
             <div className="movie-container">
                 {movies.map((movie) => (
                     <SingleCard
-
+                        handleWatchTime = {handleWatchTime}
                         movie={movie}
 
 

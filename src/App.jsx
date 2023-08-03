@@ -8,7 +8,23 @@ import Home from "./component/Home/Home";
 import SideCart from "./component/SideCart/SideCart";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [watchTime, setWatchTime] = useState("");
+
+     const handleWatchTime = (watchTime) => {
+       const previousWatchTime = JSON.parse(localStorage.getItem("watchTime"));
+      
+        if(previousWatchTime){
+           const totalWatchTime = previousWatchTime + watchTime;
+           localStorage.setItem("watchTime",totalWatchTime);
+           setWatchTime(totalWatchTime);
+
+        }else{
+          localStorage.setItem("watchTime", watchTime);
+          setWatchTime(watchTime);
+        }
+
+     };
+
 
   return (
     <>
@@ -18,10 +34,10 @@ function App() {
        </div>
        <div className="main row">
           <div className="home-container col-md-8">
-               <Home></Home>
+               <Home handleWatchTime = {handleWatchTime}></Home>
           </div>
           <div className="sideCart col-md-4 card">
-                    <SideCart>
+                    <SideCart watchTime = {watchTime}>
 
                     </SideCart>
           </div>
