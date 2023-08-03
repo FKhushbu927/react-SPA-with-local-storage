@@ -7,7 +7,7 @@ const SingleCard = ({ movie, handleWatchTime }) => {
         <div>
 
             <div className="movie-card card text-center w-100 m-auto">
-                <div className="movie-poster w-50 m-auto">
+                <div className="movie-poster w-75 m-auto">
                     <img className='w-75' src={movie.poster} alt="" />
                 </div>
                 <h3>{movie.movieName}</h3>

@@ -6,6 +6,8 @@ import './App.css';
 import Header from "./component/Header/Header";
 import Home from "./component/Home/Home";
 import SideCart from "./component/SideCart/SideCart";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [watchTime, setWatchTime] = useState("");
@@ -42,6 +44,7 @@ function App() {
                     </SideCart>
           </div>
        </div>
+       <ToastContainer />
     </>
   );
 }
